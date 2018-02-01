@@ -30,6 +30,10 @@ function clean() {
   return del(paths.build);
 }
 
+function cleanBlocks() {
+  return del(paths.src + 'scss/blocks/*.*');
+}
+
 function styles() {
   return gulp.src(paths.src + "scss/styles.scss")
     .pipe(plumber())
@@ -69,6 +73,11 @@ function images() {
     .pipe(gulp.dest(paths.build + "img/"));
 }
 
+function fonts() {
+  return gulp.src(paths.src + "fonts/*.*")
+    .pipe(gulp.dest(paths.build + "fonts/"));
+}
+
 function watch() {
   gulp.watch(paths.src + "scss/**/*.scss", styles);
   gulp.watch(paths.src + "js/**/*.js", scripts);
@@ -86,15 +95,17 @@ function serve() {
   browserSync.watch(paths.build + "**/*.*", browserSync.reload);
 }
 
+gulp.task("cleanBlocks", cleanBlocks);
 gulp.task("clean", clean);
 gulp.task("styles", styles);
 gulp.task("scripts", scripts);
 gulp.task("html", html);
 gulp.task("images", images);
+gulp.task("fonts", fonts);
 gulp.task("watch", watch);
 gulp.task("serve", serve);
 gulp.task("default", gulp.series(
   clean,
-  gulp.parallel(styles, scripts, html, images),
+  gulp.parallel(styles, scripts, html, images, fonts),
   gulp.parallel(watch, serve)
 ));

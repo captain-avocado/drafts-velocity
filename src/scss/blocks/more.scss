@@ -1,0 +1,9 @@
+.more {
+  padding: 16px 32px;
+  border: 1px solid $blue;
+  border-radius: 32px;
+  color: $blue;
+  &::hover {
+    cursor: pointer;
+  }
+}

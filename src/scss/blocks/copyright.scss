@@ -1,0 +1,11 @@
+.copyright {
+  font-family: 'Roboto';
+  font-size: 20px;
+  color: #3c3a4b;
+  &__link {
+    color: #1da7ff;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

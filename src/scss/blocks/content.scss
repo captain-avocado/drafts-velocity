@@ -1,6 +1,9 @@
 .content {
-  height: 100%;
-  display: flex;
-  justify-content: center;
+  display: flex; // justify-content: center;
   align-items: center;
+  flex-direction: column; // width: 100%;
+}
+
+.content_nums {
+  width: 80%;
 }

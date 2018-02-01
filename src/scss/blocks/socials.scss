@@ -1,0 +1,19 @@
+.socials {
+  display: flex;
+  margin-left: auto;
+  &__link {
+    display: block;
+    width: 50px;
+    height: 36px;
+    background-image: url('../img/socials-sprite.png');
+    &_ball {
+      background-position: -69px 0;
+    }
+    &_tw {
+      background-position: -69*2px 0;
+    }
+    &_gh {
+      background-position: -69*3px 0;
+    }
+  }
+}
